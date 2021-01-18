@@ -18,6 +18,9 @@ jobs:
           key: dependencies-{{ checksum "yarn.lock" }}
           paths:
             - ./node_modules
+      - run:
+          name: Yarn test
+          command: yarn test
   docker-build-and-push:
     docker:
       - image: docker:17.05.0-ce-git
